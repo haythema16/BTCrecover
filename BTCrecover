@@ -1,0 +1,32 @@
+1 Install Python 2.7 and pip
+!sudo apt-get update
+!sudo apt-get install python2.7 python2.7-dev
+!curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+!sudo python2.7 get-pip.py
+
+2 Install PyWin32, PyCrypto, and Other Dependencies
+!sudo pip2 install pywin32
+!sudo pip2 install pycryptodome==3.4.7  # PyCrypto alternative
+!sudo pip2 install Pylibscrypt
+!sudo pip2 install coincurve==5.2.0 pysha3
+!sudo pip2 install protobuf
+!sudo pip2 install pyopencl==2018.1.1+cl12
+
+
+3 Install Libsodium
+!wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz
+!tar -xzf libsodium-1.0.18-stable.tar.gz
+!cd libsodium-stable
+!./configure
+!make
+!sudo make install
+!sudo ldconfig
+
+
+4 Clone and Set Up BTCrecover
+ !cd ~
+!git clone https://github.com/gurnec/btcrecover.git
+!cd btcrecover
+
+5 Testing the Installation
+!python2.7 btcrecover.py --help
